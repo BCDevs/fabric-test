@@ -20,7 +20,7 @@ elif [ "$CC_SRC_LANGUAGE" = "java" ]; then
 	CC_SRC_PATH=/opt/gopath/src/github.com/chaincode/fabcar/java
 elif [ "$CC_SRC_LANGUAGE" = "javascript" ]; then
 	CC_RUNTIME_LANGUAGE=node # chaincode runtime language is node.js
-	CC_SRC_PATH=/opt/gopath/src/github.com/chaincode/fabcar/javascript
+	CC_SRC_PATH=/opt/gopath/src/github.com/chaincode/ecom
 elif [ "$CC_SRC_LANGUAGE" = "typescript" ]; then
 	CC_RUNTIME_LANGUAGE=node # chaincode runtime language is node.js
 	CC_SRC_PATH=/opt/gopath/src/github.com/chaincode/fabcar/typescript
@@ -61,7 +61,7 @@ docker exec \
   -e CORE_PEER_TLS_ROOTCERT_FILE=${ORG1_TLS_ROOTCERT_FILE} \
   cli \
   peer chaincode install \
-    -n fabcar \
+    -n ecom \
     -v 1.0 \
     -p "$CC_SRC_PATH" \
     -l "$CC_RUNTIME_LANGUAGE"
@@ -74,7 +74,7 @@ docker exec \
   -e CORE_PEER_TLS_ROOTCERT_FILE=${ORG1_TLS_ROOTCERT_FILE} \
   cli \
   peer chaincode install \
-    -n fabcar \
+    -n ecom \
     -v 1.0 \
     -p "$CC_SRC_PATH" \
     -l "$CC_RUNTIME_LANGUAGE"
@@ -87,7 +87,7 @@ docker exec \
   -e CORE_PEER_TLS_ROOTCERT_FILE=${ORG2_TLS_ROOTCERT_FILE} \
   cli \
   peer chaincode install \
-    -n fabcar \
+    -n ecom \
     -v 1.0 \
     -p "$CC_SRC_PATH" \
     -l "$CC_RUNTIME_LANGUAGE"
@@ -100,7 +100,7 @@ docker exec \
   -e CORE_PEER_TLS_ROOTCERT_FILE=${ORG2_TLS_ROOTCERT_FILE} \
   cli \
   peer chaincode install \
-    -n fabcar \
+    -n ecom \
     -v 1.0 \
     -p "$CC_SRC_PATH" \
     -l "$CC_RUNTIME_LANGUAGE"
@@ -113,7 +113,7 @@ docker exec \
   peer chaincode instantiate \
     -o orderer.example.com:7050 \
     -C mychannel \
-    -n fabcar \
+    -n ecom \
     -l "$CC_RUNTIME_LANGUAGE" \
     -v 1.0 \
     -c '{"Args":[]}' \
@@ -135,7 +135,7 @@ docker exec \
   peer chaincode invoke \
     -o orderer.example.com:7050 \
     -C mychannel \
-    -n fabcar \
+    -n ecom \
     -c '{"function":"initLedger","Args":[]}' \
     --waitForEvent \
     --tls \
