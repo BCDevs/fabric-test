@@ -33,12 +33,9 @@ async function main() {
         const network = await gateway.getNetwork('mychannel');
 
         // Get the contract from the network.
-        const contract = network.getContract('fabcar');
+        const contract = network.getContract('ecom');
 
-        // Submit the specified transaction.
-        // createCar transaction - requires 5 argument, ex: ('createCar', 'CAR12', 'Honda', 'Accord', 'Black', 'Tom')
-        // changeCarOwner transaction - requires 2 args , ex: ('changeCarOwner', 'CAR10', 'Dave')
-        await contract.submitTransaction('createCar', 'CAR12', 'Honda', 'Accord', 'Black', 'Tom');
+         await contract.submitTransaction('addProduct', 'Item5', 'Laptops', 'MSFTP3', 'Microsoft Surface Pro3', '487','7');
         console.log('Transaction has been submitted');
 
         // Disconnect from the gateway.
