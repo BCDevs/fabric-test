@@ -35,7 +35,7 @@ async function main() {
         // Get the contract from the network.
         const contract = network.getContract('ecom');
 
-         await contract.submitTransaction('addProduct', 'Item5', 'Laptops', 'MSFTP3', 'Microsoft Surface Pro3', '487','7');
+         await contract.submitTransaction('addProduct', 'Item6', 'Laptops', 'Lenovo-Yoga', 'Lenovo-Yoga book4', '354','8');
         console.log('Transaction has been submitted');
 
         // Disconnect from the gateway.
